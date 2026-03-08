@@ -1,16 +1,31 @@
-# React + Vite
+# 🏛️ Sistema de Divulgación 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plataforma integral para la gestión, publicación y difusión de noticias, eventos y avisos. Este proyecto sigue una arquitectura Full-Stack moderna priorizando la seguridad y la escalabilidad.
 
-Currently, two official plugins are available:
+## 📑 Cambios Recientes (Marzo 2026)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### **Backend (Node.js + Express)**
+* **Seguridad de Credenciales**: Implementación de **Bcrypt** para el hashing de contraseñas, garantizando que la información sensible de los editores nunca se almacene en texto plano.
+* **Módulo de Autenticación**: 
+    * `POST /api/register`: Registro de nuevos editores con validación de existencia previa (username/email).
+    * `POST /api/login`: Validación de credenciales contra hashes almacenados y retorno de perfil de usuario.
+* **Persistencia de Datos**: Conectividad robusta con **MySQL (XAMPP)** mediante `mysql2/promise` y gestión de variables de entorno con `dotenv`.
+* **Arquitectura Modular**: Configuración completa de **ES Modules** (`type: module`) y enrutamiento organizado en la carpeta `/routes`.
 
-## React Compiler
+### **Frontend (React + Vite)**
+* **Persistencia de Sesión**: Integración de `localStorage` para mantener al usuario logueado tras recargar el navegador.
+* **Identidad Visual**: Interfaz adaptada utilizando **Tailwind CSS**.
+* **Navegación Inteligente**: 
+    * La `Navbar` ahora muestra dinámicamente el nombre del usuario logueado.
+    * Implementación de lógica de "Rutas Protegidas" para restringir el acceso a la creación de contenido.
+* **Modularización de Vistas**: Separación del código en vistas independientes (`HomeView`, `LoginView`, `RegisterView`, `CreatePostView`) para facilitar el mantenimiento en la rama `developer`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologías Utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Capa | Tecnologías |
+| :--- | :--- |
+| **Frontend** | React 18, Vite, Tailwind CSS, React Icons |
+| **Backend** | Node.js, Express, Bcrypt, Dotenv |
+| **Base de Datos** | MySQL |
