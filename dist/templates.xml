@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <template>
+        <id>1</id>
+        <url>templates/0126.jpg</url>
+        <name>Silueta</name>
+    </template>
+    <template>
+        <id>2</id>
+        <url>templates/2026-03-24_042601.jpg</url>
+        <name>Creativo</name>
+    </template>
+    <template>
+        <id>3</id>
+        <url>templates/2026-03-24_045036.jpg</url>
+        <name>Tecnológico</name>
+    </template>
+    <template>
+        <id>4</id>
+        <url>templates/2kjfGq8cpDWNkjlZxBefn6Cdobd-desktop.jpg</url>
+        <name>Reluciente</name>
+    </template>
+    <template>
+        <id>5</id>
+        <url>templates/2oF8FFop.jpg</url>
+        <name>Urbano</name>
+    </template>
+    <template>
+        <id>6</id>
+        <url>templates/2p7sktop.jpg</url>
+        <name>Futurista</name>
+    </template>
+    <template>
+        <id>7</id>
+        <url>templates/2u7Q8sktop.jpg</url>
+        <name>Moderno</name>
+    </template>
+    <template>
+        <id>8</id>
+        <url>templates/510971820.jpg</url>
+        <name>Silueta 2</name>
+    </template>
+    <template>
+        <id>9</id>
+        <url>templates/5590457.jpg</url>
+        <name>Elegante</name>
+    </template>
+    <template>
+        <id>10</id>
+        <url>templates/960_540.jpg</url>
+        <name>Abstracto</name>
+    </template>
+    <template>
+        <id>11</id>
+        <url>templates/Arquitectura-edificios-moderna.jpg</url>
+        <name>Moderno 2</name>
+    </template>
+    <template>
+        <id>12</id>
+        <url>templates/back photo.jpg</url>
+        <name>Digital</name>
+    </template>
+    <template>
+        <id>13</id>
+        <url>templates/blur.jpg</url>
+        <name>Elegante 2</name>
+    </template>
+    <template>
+        <id>14</id>
+        <url>templates/celestestrella.jpg</url>
+        <name>Digital 2</name>
+    </template>
+    <template>
+        <id>15</id>
+        <url>templates/corporateoffice.jpg</url>
+        <name>Minimalista</name>
+    </template>
+    <template>
+        <id>16</id>
+        <url>templates/cou92176.jpg</url>
+        <name>Creativo 2</name>
+    </template>
+    <template>
+        <id>17</id>
+        <url>templates/degradado.jpg</url>
+        <name>Abstracto 2</name>
+    </template>
+    <template>
+        <id>18</id>
+        <url>templates/floatingake.jpg</url>
+        <name>Elegante 3</name>
+    </template>
+    <template>
+        <id>19</id>
+        <url>templates/geometriake.jpg</url>
+        <name>Reluciente 2</name>
+    </template>
+    <template>
+        <id>20</id>
+        <url>templates/jha309.jpg</url>
+        <name>Campo Visual</name>
+    </template>
+    <template>
+        <id>21</id>
+        <url>templates/motioe.jpg</url>
+        <name>Atrevido</name>
+    </template>
+    <template>
+        <id>22</id>
+        <url>templates/pp8.jpg</url>
+        <name>Geometría</name>
+    </template>
+    <template>
+        <id>23</id>
+        <url>templates/ralf140398.jpg</url>
+        <name>Campo Visual 2</name>
+    </template>
+    <template>
+        <id>24</id>
+        <url>templates/realisctor.jpg</url>
+        <name>Creativo 3</name>
+    </template>
+    <template>
+        <id>25</id>
+        <url>templates/redyy.jpg</url>
+        <name>Tecnológico 2</name>
+    </template>
+    <template>
+        <id>26</id>
+        <url>templates/ronald86.jpg</url>
+        <name>Tecnológico 3</name>
+    </template>
+    <template>
+        <id>27</id>
+        <url>templates/sergio507.jpg</url>
+        <name>Futurista 2</name>
+    </template>
+    <template>
+        <id>28</id>
+        <url>templates/white square.png</url>
+        <name>Corporativo</name>
+    </template>
+      <template>
+        <id>29</id>
+        <url>templates/arr332.jpg</url>
+        <name>Corporativo 1</name>
+    </template>
+</templates>
