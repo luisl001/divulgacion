@@ -1,0 +1,59 @@
+CREATE DATABASE IF NOT EXISTS div_ingenieria_db;
+USE div_ingenieria_db;
+
+-- 1. Tabla de Categorías
+CREATE TABLE category (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+-- 2. Tabla de Usuarios
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(150) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    isadmin TINYINT(1) DEFAULT 0 -- 1 para admin (editores), 0 para usuario normal
+);
+
+-- 3. Tabla de Posts (Noticias)
+CREATE TABLE post (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    postitle VARCHAR(255) NOT NULL,
+    -- Cambiado a MEDIUMTEXT para artículos sin límite real
+    content MEDIUMTEXT NOT NULL, 
+    user_id INT,
+    category_id INT,
+    labels VARCHAR(255),
+    date_created DATETIME DEFAULT CURRENT_TIMESTAMP,
+    
+    CONSTRAINT fk_post_user FOREIGN KEY (user_id) 
+        REFERENCES users(id) ON DELETE SET NULL,
+    CONSTRAINT fk_post_category FOREIGN KEY (category_id) 
+        REFERENCES category(id) ON DELETE SET NULL
+);
+
+CREATE TABLE post_saved (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    post_id INT NOT NULL,
+    -- Guardaremos los estilos y posiciones como JSON strings
+    title_data JSON, 
+    content_data JSON,
+    notes_data JSON, 
+    background_data JSON,
+    CONSTRAINT fk_post_details FOREIGN KEY (post_id) 
+        REFERENCES post(id) ON DELETE CASCADE
+);
+
+ALTER TABLE post
+ADD COLUMN image_ref VARCHAR(255) DEFAULT NULL;
+
+ALTER TABLE users 
+ADD COLUMN profile_pic VARCHAR(255) DEFAULT 'default_avatar.png' AFTER email;
+
+-- Actualizamos la tabla para los nuevos requerimientos
+ALTER TABLE post_saved 
+ADD COLUMN nameofplantilla VARCHAR(255) DEFAULT NULL,
+ADD COLUMN notes_text JSON DEFAULT NULL,
+ADD UNIQUE (post_id);
