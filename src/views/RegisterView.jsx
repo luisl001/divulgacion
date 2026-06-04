@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ENDPOINTS } from '../config/apiConfig.js';
 
 const RegisterView = () => {
   const [form, setForm] = useState({ name: '', username: '', email: '', password: '', isadmin: 0 });
@@ -6,7 +7,7 @@ const RegisterView = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/api/register', {
+      const response = await fetch(ENDPOINTS.API_BASE_URL + '/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
@@ -23,7 +24,7 @@ const RegisterView = () => {
         <input className="w-full p-3 border rounded" placeholder="Usuario" onChange={e => setForm({...form, username: e.target.value})} />
         <input className="w-full p-3 border rounded" type="email" placeholder="Correo Institucional" onChange={e => setForm({...form, email: e.target.value})} />
         <input className="w-full p-3 border rounded" type="password" placeholder="Contraseña" onChange={e => setForm({...form, password: e.target.value})} />
-        <button type="submit" className="w-full bg-usac-blue text-white py-3 font-bold hover:bg-blue-900 transition">REGISTRAR</button>
+        <button type="submit" className="w-full bg-blue-900 text-white py-3 font-bold hover:bg-blue-500 transition shadow-md">REGISTRAR</button>
       </form>
     </div>
   );

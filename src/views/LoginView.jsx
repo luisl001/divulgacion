@@ -1,12 +1,14 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; 
+import { ENDPOINTS } from '../config/apiConfig.js';
 
 const LoginView = ({ setIsLoggedIn, setView, setUser }) => {
   const [form, setForm] = useState({ username: '', password: '' });
-
+  const navigate = useNavigate(); // Inicializamos el navegador
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/api/login', {
+      const response = await fetch(ENDPOINTS.API_BASE_URL + '/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
@@ -18,8 +20,8 @@ const LoginView = ({ setIsLoggedIn, setView, setUser }) => {
         localStorage.setItem('user_session', JSON.stringify(data.user));
         setIsLoggedIn(true);
         setUser(data.user);
-        setView('home');
-        alert(`Bienvenido, ${data.user.name}`);
+        navigate('/');
+       //  alert(`Bienvenido, ${data.user.name}`);
       } else {
         alert(data.error || "Credenciales incorrectas");
       }
@@ -45,7 +47,7 @@ const LoginView = ({ setIsLoggedIn, setView, setUser }) => {
           onChange={e => setForm({...form, password: e.target.value})} 
           required
         />
-        <button type="submit" className="w-full bg-usac-blue text-white py-3 font-bold hover:bg-blue-900 transition shadow-md">
+        <button type="submit" className="w-full bg-blue-900 text-white py-3 font-bold hover:bg-blue-500 transition shadow-md">
           ENTRAR
         </button>
       </form>
